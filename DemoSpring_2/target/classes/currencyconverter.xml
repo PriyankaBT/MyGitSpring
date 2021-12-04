@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="currencyConverter1"
+		class="com.cg.intro.CurrencyConverterImpl">
+		<!-- *****SETTER INJECTION*****  -->
+		<!-- <property name="exchangeRate" value="52.20" />
+		<property name="Unit" value="INR" /> -->
+
+        <!-- ******CONSTRUCTOR INJECTIONS****** -->
+        <!-- *****Sequence*****  -->
+		<!-- <constructor-arg><value>44.25</value></constructor-arg> -->
+		<!-- <constructor-arg><value>INR</value></constructor-arg> -->
+		
+		<!-- ******Index based****** -->
+		<!-- <constructor-arg index="1"><value>INR</value></constructor-arg> <constructor-arg 
+			index="0"><value>44.25</value></constructor-arg> -->
+
+		<!-- ******Type******  -->
+		<constructor-arg type="String"><value>INR</value></constructor-arg> 
+			<constructor-arg type="double"><value>44.25</value></constructor-arg>
+
+	</bean>
+	
+	<bean id="currencyConverter2" class="com.cg.intro.CurrencyConverterImpl">
+	<!-- <constructor-arg><value>44.25</value></constructor-arg> -->
+	<property name="exchangeRate"><value>50</value></property>
+	</bean>
+
+	
+	
+	
+	
+	
+	
+	<bean id="g1" class="com.cg.intro.Greet" scope="prototype">
+		<property name="countryname">
+			<value>INDIA</value>
+		</property>
+
+
+
+
+		<!-- <constructor-arg><value>India</value></constructor-arg> -->
+	</bean>
+
+	<!-- <bean id="g2" class="com.cg.intro.Greet"> <constructor-arg><value>China</value></constructor-arg> 
+		</bean> -->
+
+</beans>
